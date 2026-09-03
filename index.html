@@ -326,6 +326,17 @@
       flex-shrink: 0;
     }
     .app-icon img { width: 100%; height: 100%; object-fit: cover; }
+    .app-icon.letter-icon {
+      display: grid; place-items: center;
+      color: #071018;
+      background:
+        radial-gradient(circle at 72% 20%, rgba(255,255,255,.75), transparent 24%),
+        linear-gradient(135deg, #ffd866, #5db8e8);
+      font-family: 'Syne', sans-serif;
+      font-size: 17px;
+      font-weight: 800;
+      letter-spacing: 0;
+    }
     .app-platform { font-size: 11px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
     .app-name-label { font-family: 'Syne', sans-serif; font-size: 14px; font-weight: 700; margin-top: 2px; }
 
@@ -385,6 +396,50 @@
     .shot img { width: 100%; display: block; aspect-ratio: 16/9; object-fit: cover; }
     .shot:nth-child(1) { transform: rotate(-1.5deg); }
     .shot:nth-child(2) { transform: rotate(1.5deg); }
+    .boarding-preview {
+      min-height: 300px;
+      border-radius: 22px;
+      border: 1px solid var(--border);
+      background:
+        radial-gradient(circle at 20% 16%, rgba(255,216,102,.22), transparent 30%),
+        radial-gradient(circle at 82% 70%, rgba(93,184,232,.18), transparent 32%),
+        linear-gradient(135deg, rgba(9,15,38,.96), rgba(5,7,18,.98));
+      padding: 28px;
+      display: grid;
+      align-content: center;
+      gap: 18px;
+      transform: rotate(1deg);
+      box-shadow: 0 24px 70px rgba(0,0,0,.38);
+    }
+    .boarding-line {
+      height: 12px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--accent), var(--teal));
+      box-shadow: 0 0 24px rgba(93,184,232,.2);
+    }
+    .boarding-dots {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 10px;
+    }
+    .boarding-dots span {
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background: var(--surf2);
+      border: 1px solid var(--border);
+    }
+    .boarding-dots span:nth-child(2),
+    .boarding-dots span:nth-child(4) {
+      background: rgba(212,168,60,.9);
+      box-shadow: 0 0 20px rgba(212,168,60,.25);
+    }
+    .boarding-plane {
+      font-family: 'Syne', sans-serif;
+      font-size: 64px;
+      font-weight: 800;
+      line-height: 1;
+      color: var(--text);
+    }
 
     /* ── COMING SOON TAG (inline, non-link) ── */
     .soon-tag {
@@ -793,6 +848,45 @@
           <div class="ph">
             <div class="ph-notch"></div>
             <img src="assets/lucky-drop/ru/3.png" data-ru-src="assets/lucky-drop/ru/3.png" data-en-src="assets/lucky-drop/en/3.png" alt="Lucky Drop gameplay">
+          </div>
+        </div>
+      </div>
+
+      <!-- Boarding Has Begun -->
+      <div class="app-card rv d2">
+        <div class="app-text">
+          <div class="app-icon-row">
+            <div class="app-icon letter-icon">GO</div>
+            <div>
+              <div class="app-platform">iOS · App Store</div>
+              <div class="app-name-label" data-ru="Посадка началась" data-en="Boarding Has Begun">Посадка началась</div>
+            </div>
+          </div>
+          <h3 class="app-title" data-ru="Собери пассажиров до вылета" data-en="Board passengers before takeoff">Собери пассажиров до вылета</h3>
+          <p class="app-desc" data-ru="Динамичная игра про посадку: веди пассажиров по маршруту, укладывайся во время и превращай аэропортовый хаос в понятный поток." data-en="A fast boarding game: guide passengers along the route, beat the timer, and turn airport chaos into a clean flow.">
+            Динамичная игра про посадку: веди пассажиров по маршруту, укладывайся во время и превращай аэропортовый хаос в понятный поток.
+          </p>
+          <div class="tags">
+            <span class="tag">iOS</span>
+            <span class="tag" data-ru="Аркада" data-en="Arcade">Аркада</span>
+            <span class="tag" data-ru="Тайминг" data-en="Timing">Тайминг</span>
+            <span class="tag" data-ru="Маршруты" data-en="Routes">Маршруты</span>
+            <span class="tag" data-ru="Скоро" data-en="Soon">Скоро</span>
+          </div>
+          <div class="app-actions">
+            <span class="soon-tag" data-ru="Скоро в App Store" data-en="Coming soon to App Store">Скоро в App Store</span>
+          </div>
+        </div>
+
+        <div class="boarding-preview" aria-hidden="true">
+          <div class="boarding-plane">MM</div>
+          <div class="boarding-line"></div>
+          <div class="boarding-dots">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
           </div>
         </div>
       </div>
