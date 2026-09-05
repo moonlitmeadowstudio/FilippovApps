@@ -315,6 +315,12 @@
     }
     .app-card.flip .app-text { order: 2; }
     .app-card.flip .app-phones { order: 1; }
+    .app-card.flight-card {
+      background:
+        radial-gradient(circle at 82% 18%, rgba(93,184,232,.14), transparent 32%),
+        radial-gradient(circle at 20% 78%, rgba(212,168,60,.12), transparent 28%),
+        var(--surf);
+    }
 
     .app-icon-row {
       display: flex; align-items: center; gap: 14px;
@@ -396,51 +402,6 @@
     .shot img { width: 100%; display: block; aspect-ratio: 16/9; object-fit: cover; }
     .shot:nth-child(1) { transform: rotate(-1.5deg); }
     .shot:nth-child(2) { transform: rotate(1.5deg); }
-    .boarding-preview {
-      min-height: 300px;
-      border-radius: 22px;
-      border: 1px solid var(--border);
-      background:
-        radial-gradient(circle at 20% 16%, rgba(255,216,102,.22), transparent 30%),
-        radial-gradient(circle at 82% 70%, rgba(93,184,232,.18), transparent 32%),
-        linear-gradient(135deg, rgba(9,15,38,.96), rgba(5,7,18,.98));
-      padding: 28px;
-      display: grid;
-      align-content: center;
-      gap: 18px;
-      transform: rotate(1deg);
-      box-shadow: 0 24px 70px rgba(0,0,0,.38);
-    }
-    .boarding-line {
-      height: 12px;
-      border-radius: 999px;
-      background: linear-gradient(90deg, var(--accent), var(--teal));
-      box-shadow: 0 0 24px rgba(93,184,232,.2);
-    }
-    .boarding-dots {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 10px;
-    }
-    .boarding-dots span {
-      aspect-ratio: 1;
-      border-radius: 50%;
-      background: var(--surf2);
-      border: 1px solid var(--border);
-    }
-    .boarding-dots span:nth-child(2),
-    .boarding-dots span:nth-child(4) {
-      background: rgba(212,168,60,.9);
-      box-shadow: 0 0 20px rgba(212,168,60,.25);
-    }
-    .boarding-plane {
-      font-family: 'Syne', sans-serif;
-      font-size: 64px;
-      font-weight: 800;
-      line-height: 1;
-      color: var(--text);
-    }
-
     /* ── COMING SOON TAG (inline, non-link) ── */
     .soon-tag {
       display: inline-flex; align-items: center; gap: 7px;
@@ -853,10 +814,12 @@
       </div>
 
       <!-- Seat Please! -->
-      <div class="app-card rv d2">
+      <div class="app-card flight-card rv d2">
         <div class="app-text">
           <div class="app-icon-row">
-            <div class="app-icon letter-icon">GO</div>
+            <div class="app-icon">
+              <img src="assets/seat-please/icon.png" alt="Seat Please! icon">
+            </div>
             <div>
               <div class="app-platform">iOS · App Store</div>
               <div class="app-name-label" data-ru="Посадка началась!" data-en="Seat Please!">Посадка началась!</div>
@@ -878,15 +841,18 @@
           </div>
         </div>
 
-        <div class="boarding-preview" aria-hidden="true">
-          <div class="boarding-plane">MM</div>
-          <div class="boarding-line"></div>
-          <div class="boarding-dots">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
+        <div class="app-phones">
+          <div class="ph">
+            <div class="ph-notch"></div>
+            <img src="assets/seat-please/map-iphone.png" data-ru-src="assets/seat-please/map-iphone.png" data-en-src="assets/seat-please/map-iphone.png" alt="Seat Please! route map">
+          </div>
+          <div class="ph">
+            <div class="ph-notch"></div>
+            <img src="assets/seat-please/launch-iphone17.png" data-ru-src="assets/seat-please/launch-iphone17.png" data-en-src="assets/seat-please/launch-iphone17.png" alt="Seat Please! flights screen">
+          </div>
+          <div class="ph">
+            <div class="ph-notch"></div>
+            <img src="assets/seat-please/first-flight.png" data-ru-src="assets/seat-please/first-flight.png" data-en-src="assets/seat-please/game-english.png" alt="Seat Please! boarding puzzle">
           </div>
         </div>
       </div>
